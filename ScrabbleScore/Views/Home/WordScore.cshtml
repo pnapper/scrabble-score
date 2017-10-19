@@ -4,8 +4,15 @@
 <body>
   <h1>Scrabble Word Score:</h1>
 
-  <h2><em>Word:</em> </h2>
-  <h2><em>Word Score:</em> <strong>@Model</strong></h2>
+  <h2><em>Word:</em> <strong>@Model.GetWord()</strong></h2>
+@* @if(Model > 0)
+{ *@
+  <h2><em>Word Score:</em> <strong>@Model.GetScore()</strong></h2>
+@* }
+else
+{
+  <h3><em><span id="error">Invalid Input: Please enter words with A-Z only.</span></em></h3>
+} *@
 <br>
   <a href="/">Try Another Word</a>
 </body>

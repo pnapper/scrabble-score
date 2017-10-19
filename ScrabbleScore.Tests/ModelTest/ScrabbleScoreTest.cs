@@ -59,11 +59,23 @@ namespace ScrabbleScore.TestTools
     public void GetWordScore_ReturnError_NonLetter()
     {
       //Arrange
-      Word newWord = new Word("farm$");
+      Word newWord = new Word("farm");
       //Act
       int wordScore = newWord.GetWordScore();
       //Assert
       Console.WriteLine(wordScore);
+    }
+    [TestMethod]
+    public void GetScore_ReturnScore_int()
+    {
+      //Arrange
+      Word newWord = new Word("patrick");
+
+      //Act
+      int wordScore = newWord.GetWordScore();
+
+      //Assert
+      Console.WriteLine(newWord.GetScore());
     }
 
   }

@@ -16,12 +16,12 @@ namespace ScrabbleScore.Controllers
     [HttpPost("/score")]
     public ActionResult WordScore()
     {
-      Word newWord = new Word(Request.Form["wordInput"]);
+      Word newWord = new Word(Request.Form["wordInput"],0);
       int wordScore = newWord.GetWordScore();
-      string word = newWord.GetWord();
+      // string word = newWord.GetWord();
       Console.WriteLine(wordScore);
 
-      return View(wordScore);
+      return View(newWord);
     }
   }
 }
