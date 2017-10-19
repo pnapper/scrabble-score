@@ -55,5 +55,16 @@ namespace ScrabbleScore.TestTools
       Console.WriteLine(wordScore);
     }
 
+    [TestMethod]
+    public void GetWordScore_ReturnError_NonLetter()
+    {
+      //Arrange
+      Word newWord = new Word("farm$");
+      //Act
+      int wordScore = newWord.GetWordScore();
+      //Assert
+      Console.WriteLine(wordScore);
+    }
+
   }
 }
