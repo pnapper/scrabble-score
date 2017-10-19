@@ -1,7 +1,12 @@
-<h1>Scrabble Word Score:</h1>
 
-<form action="/score" method="post">
-  <label for="wordInput">Enter Word</label>
-  <input type="text" name="wordInput">
-  <button type="submit" name="button">Check Score</button>
-</form>
+@{
+  Layout = "_Layout";
+}
+<body>
+  <h1>Scrabble Word Score:</h1>
+  <form action="/score" method="post">
+    <label for="wordInput">Enter Word:</label><br>
+    <input type="text" name="wordInput" class= "form-control" style="width:50%"><br><br>
+    <button type="submit" name="button" class= "btn btn-info">Check Score</button>
+  </form>
+</body>
