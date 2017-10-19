@@ -6,7 +6,7 @@ namespace ScrabbleScore.Models
   public class Word
   {
     private string _word;
-    private static List<char> _letters = new List<char> {};
+    // private static List<char> _letters = new List<char> {};
 
     public Word(string word)
     {
@@ -25,7 +25,7 @@ namespace ScrabbleScore.Models
       return letterList;
     }
 
-    public int ConvertLetterToValue(char letter)
+    public static int ConvertLetterToValue(char letter)
     {
       int letterValue = 0;
       if (Char.IsLetter(letter) == true)
@@ -61,5 +61,18 @@ namespace ScrabbleScore.Models
       }
       return letterValue;
     }
+
+    public int GetWordScore()
+    {
+      char[] letters = this.GetLetters();
+      int wordScore = 0;
+      for (var i=0; i< letters.Length; i++)
+      {
+        int letterScore = Word.ConvertLetterToValue(letters[i]);
+        wordScore = wordScore + letterScore;
+      }
+      return wordScore;
+    }
+
   }
 }

@@ -10,6 +10,16 @@ namespace ScrabbleScore.TestTools
   public class ScoreTest
   {
     [TestMethod]
+    public void GetWord_ReturnString_word()
+    {
+      //Arrange
+      Word newWord = new Word("friend");
+      //Act
+      string word = newWord.GetWord();
+      //Assert
+      Console.WriteLine(word);
+    }
+    [TestMethod]
     public void GetLetters_ReturnLetters_char()
     {
 
@@ -30,10 +40,20 @@ namespace ScrabbleScore.TestTools
       char firstLetter = lettersArray[0];
       Console.WriteLine(firstLetter);
       //Act
-      int firstLetterValue = newWord.ConvertLetterToValue(firstLetter);
+      int firstLetterValue = Word.ConvertLetterToValue(firstLetter);
       //Assert
       Console.WriteLine(firstLetterValue);
-
     }
+    [TestMethod]
+    public void GetWordScore_ReturnScore_4letters()
+    {
+      //Arrange
+      Word newWord = new Word("farm");
+      //Act
+      int wordScore = newWord.GetWordScore();
+      //Assert
+      Console.WriteLine(wordScore);
+    }
+
   }
 }
